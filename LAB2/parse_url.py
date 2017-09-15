@@ -13,7 +13,8 @@ class URLParser:
         self.html_links = []
 
     def html_search(self):
-        self.html_links = str(re.findall('(?:(?:www\.)|(?:https?:\/\/))(?:[\w\.]+)\.(?:[a-z]{2,6}\.?)', self.text))
+        self.html_links = re.findall('(?:(?:www\.)|(?:https?:\/\/))(?:[\w\.]+)\.(?:[a-z]{2,6}\.?)', self.text)
+        return self.html_links
 
     def __repr__(self):
         return str(self.html_links)
